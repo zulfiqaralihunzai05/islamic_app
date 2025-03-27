@@ -37,13 +37,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 _buildPage(
                   "assets/splash_screen/islamic-pic2.png",
-                  "Easy Ordering",
-                  "Order your favorite halal meals from nearby restaurants quickly and easily.",
+                  "Connect with Your Muslim Community",
+                  "Connect with Muslims near and far. Share experiences, stories, and moments with a diverse and welcoming community.",
                 ),
                 _buildPage(
                   "assets/splash_screen/islamic-pic3.png",
-                  "Enjoy Your Meal",
-                  "Get fresh and delicious halal food delivered right to your home.",
+                  "Discover Local Events",
+                  "Stay updated on exciting events happening in your area. From cultural gatherings to educational seminars, we've got you covered.",
                 ),
               ],
             ),
