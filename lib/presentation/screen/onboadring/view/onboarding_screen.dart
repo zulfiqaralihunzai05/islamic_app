@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/presentation/screen/onboadring/view/widgets/page_widget.dart';
-import '../../../../dashboard/home-screen.dart';
+import '../../../../dashboard/navbar_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -73,7 +73,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     curve: Curves.easeInOut,
                   );
                 } else {
-                  Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => BottomNavScreen()));
                 }
               },
               child: Text(
