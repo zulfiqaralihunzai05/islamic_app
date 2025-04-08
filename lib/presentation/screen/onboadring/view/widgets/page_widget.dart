@@ -57,7 +57,7 @@ class OnboardingPage extends StatelessWidget {
         ),
         SizedBox(height: 20),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
+          padding:const EdgeInsets.symmetric(horizontal: 30),
           child: Text(
             description,
             style:  TextStyle(fontSize: 16, color: Colors.black54),
