@@ -47,25 +47,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     textFieldTitle: "Email",
                   ),
                   SizedBox(height: 10),
-                  TextField(
-                    obscureText: _obscureText,
-                    style: TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _obscureText ? Icons.visibility_off : Icons.visibility,
+                  SizedBox(
+                    height: 55,
+                    child: TextField(
+                      obscureText: _obscureText,
+                      style: TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscureText ? Icons.visibility_off : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscureText = !_obscureText;
+                            });
+                          },
                         ),
-                        onPressed: () {
-                          setState(() {
-                            _obscureText = !_obscureText;
-                          });
-                        },
-                      ),
-                      hintText: "Password",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                          // width: 10,
+                        hintText: "Password",
+                        border: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            color: Colors.grey,
+                            // width: 10,
+                          ),
                         ),
                       ),
                     ),
