@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             titletext(
-              text: "Welcome back!       Glad to see you,        Again!",
+              text: "Welcome back!                Glad to see you,        Again!",
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
