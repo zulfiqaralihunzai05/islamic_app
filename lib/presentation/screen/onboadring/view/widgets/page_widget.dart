@@ -39,7 +39,7 @@ class OnboardingPage extends StatelessWidget {
               height: 8,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
-                color: currentPage == index ? Colors.black : Colors.black,
+                color: currentPage == index ? Colors.black : Colors.grey,
               ),
             );
           }),
