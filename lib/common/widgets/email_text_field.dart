@@ -9,13 +9,16 @@ class TextField1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 55,
-      child: TextField(
-        decoration: InputDecoration(
-          border: OutlineInputBorder(),
-          hintText: textFieldTitle,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
+      child: SizedBox(
+        height: 55,
+        child: TextField(
+          decoration: InputDecoration(
+            border: OutlineInputBorder(),
+            hintText: textFieldTitle,
 
+          ),
         ),
       ),
     );

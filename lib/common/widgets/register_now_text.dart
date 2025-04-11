@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
-class bottomtext extends StatelessWidget {
+import 'package:islamic_app/presentation/screen/Auth/View/login_screen.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/register_screen.dart';
+class RegisterNowText extends StatelessWidget {
   final String text1;
   final String text2;
+  final VoidCallback onTap;
 
 
-  const bottomtext({
-    super.key, required this.text1, required this.text2,
+  const RegisterNowText({
+    super.key, required this.text1, required this.text2, required this.onTap,
   });
 
   @override
@@ -19,7 +22,7 @@ class bottomtext extends StatelessWidget {
           style: TextStyle(color: Colors.black87, fontSize: 16),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: onTap,
           child: Text(
             text2,
             style: TextStyle(

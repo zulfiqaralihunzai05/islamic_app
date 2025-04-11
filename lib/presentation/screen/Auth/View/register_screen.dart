@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/login_screen.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/term_and_conditions.dart';
 
 import '../../../../common/widgets/email_text_field.dart';
 import '../../../../common/widgets/login_button.dart';
@@ -36,38 +39,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: 20),
-                  SizedBox(
-                    height: 55,
-                    child: TextField1(
-                      textFieldTitle: "UserName",
-                    ),
+                  TextField1(
+                    textFieldTitle: "UserName",
                   ),
-                  SizedBox(height: 10),
                   TextField1(
                     textFieldTitle: "Email",
                   ),
                   SizedBox(height: 10),
-                  SizedBox(
-                    height: 55,
-                    child: TextField(
-                      obscureText: _obscureText,
-                      style: TextStyle(color: Colors.black),
-                      decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            _obscureText ? Icons.visibility_off : Icons.visibility,
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0,),
+                    child: SizedBox(
+                      height: 55,
+                      child: TextField(
+                        obscureText: _obscureText,
+                        style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _obscureText ? Icons.visibility_off : Icons.visibility,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _obscureText = !_obscureText;
+                              });
+                            },
                           ),
-                          onPressed: () {
-                            setState(() {
-                              _obscureText = !_obscureText;
-                            });
-                          },
-                        ),
-                        hintText: "Password",
-                        border: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Colors.grey,
-                            // width: 10,
+                          hintText: "Password",
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.grey,
+                              // width: 10,
+                            ),
                           ),
                         ),
                       ),
@@ -81,7 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: button1(
-                      textLabel: 'Register',
+                      textLabel: 'Register', onTap: () {  },
                     ),
                   ),
                   RichText(
@@ -90,8 +92,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       style: TextStyle(color: Colors.black, fontSize: 18,height: 1.5),
                       children: <TextSpan>[
                         TextSpan(
+
                           text: 'Terms and Conditions',
                           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green, wordSpacing: 1),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditions(),));
+                            },
                         ),
                         TextSpan(
                           text: ' and ',
@@ -129,9 +136,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     image3: 'assets/images/cib_apple.png',
                   ),
                   SizedBox(height: 20),
-                  bottomtext(
+                  RegisterNowText(
                     text1: 'Already have an account?',
-                    text2: 'Login Now',
+                    text2: 'Login Now', onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+                  },
                   ),
                 ],
               )

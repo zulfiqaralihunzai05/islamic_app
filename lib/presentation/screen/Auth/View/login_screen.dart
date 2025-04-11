@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/forget_password_screen.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/homescreen.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/register_screen.dart';
 
 import '../../../../common/widgets/register_now_text.dart';
 import '../../../../common/widgets/login_button.dart';
@@ -38,42 +41,55 @@ class _LoginScreenState extends State<LoginScreen> {
                   textFieldTitle: "Enter your email",
                 ),
                 SizedBox(height: 10),
-                TextField(
-                  obscureText: _obscureText,
-                  style: TextStyle(color: Colors.black),
-                  decoration: InputDecoration(
-                    suffixIcon: IconButton(
-                      icon: Icon(
-                        _obscureText ? Icons.visibility_off : Icons.visibility,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0,),
+                  child: TextField(
+                    obscureText: _obscureText,
+                    style: TextStyle(color: Colors.black),
+                    decoration: InputDecoration(
+                      suffixIcon: IconButton(
+                        icon: Icon(
+                          _obscureText ? Icons.visibility_off : Icons.visibility,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            _obscureText = !_obscureText;
+                          });
+                        },
                       ),
-                      onPressed: () {
-                        setState(() {
-                          _obscureText = !_obscureText;
-                        });
-                      },
-                    ),
-                    hintText: "Enter Your password",
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.grey,
-                        // width: 10,
+                      hintText: "Enter Your password",
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.grey,
+                          // width: 10,
+                        ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(height: 10),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(color: Colors.green),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ForgetPasswordScreen(),));
+                  },
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Text(
+                      "Forgot Password?",
+                      style: TextStyle(color: Colors.green),
+                    ),
                   ),
                 ),
                 SizedBox(height: 20),
                 SizedBox(
                   width:double.infinity,
                   child: button1(
-                    textLabel: 'Login',
+                    textLabel: 'Login', onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Homescreen()),
+                    );
+                  },
                   ),
                 ),
                 SizedBox(height: 40),
@@ -97,9 +113,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   image3: 'assets/images/cib_apple.png',
                 ),
                 SizedBox(height: 20),
-                bottomtext(
-                  text1: 'Already have an account?',
-                  text2: 'Register Now',
+                RegisterNowText(
+                  text1: "Don't have an account?",
+                  text2: 'Register Now', onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen(),));
+                },
                 ),
               ],
             )

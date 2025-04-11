@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/forget_password_screen.dart';
 import 'package:islamic_app/presentation/screen/Auth/View/login_screen.dart';
 import 'package:islamic_app/presentation/screen/Auth/View/register_screen.dart';
 import 'package:islamic_app/presentation/screen/Auth/View/term_and_conditions.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const TermAndConditions(),
+      home: const  LoginScreen(),
     );
   }
 }
