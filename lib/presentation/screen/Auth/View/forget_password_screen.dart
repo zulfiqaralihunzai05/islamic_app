@@ -18,7 +18,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         children: [
         SizedBox(height: 130,),
       titletext(
-        text: "Forget Password?",
+        text: "Forgot Password?",
       ),
       Padding(
         padding: const EdgeInsets.only(left: 20),
@@ -36,7 +36,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: button1(
-            textLabel: 'Login', onTap: () {
+            textLabel: 'Send Code', onTap: () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const CodeScreen()),
