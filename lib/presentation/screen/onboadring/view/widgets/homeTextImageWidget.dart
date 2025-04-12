@@ -17,12 +17,12 @@ class text_imageWidget extends StatelessWidget {
           height: 40,
         ),
         SizedBox(
-          height: 4,
+          height: 10,
         ),
         Text(
           rowText,
           style:
-          TextStyle(fontWeight: FontWeight.w700, fontSize: 15),
+          TextStyle(fontWeight: FontWeight.w700, fontSize: 15, ),
           textAlign: TextAlign.center,
         )
       ],
