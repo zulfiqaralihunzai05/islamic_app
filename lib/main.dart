@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/change_password_screen.dart';
+import 'package:islamic_app/presentation/screen/Auth/View/create_new_password_screen.dart';
 import 'package:islamic_app/presentation/screen/Auth/View/forget_password_screen.dart';
 import 'package:islamic_app/presentation/screen/Auth/View/login_screen.dart';
 import 'package:islamic_app/presentation/screen/Auth/View/register_screen.dart';
@@ -24,6 +26,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const  LoginScreen(),
+
     );
   }
 }
