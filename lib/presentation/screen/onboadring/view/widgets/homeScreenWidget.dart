@@ -16,10 +16,10 @@ class homeContainerWidget extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            transform: GradientRotation(97.13 * (3.1415926535 / 180)), // approx 97.13 degrees
+            transform: GradientRotation(97.13 * (3.1415926535 / 180)),
             colors: [
-              Color(0xFF87D1A4), // Swapped: now on the left
-              Color(0xFF006754), // Swapped: now on the right
+              Color(0xFF87D1A4),
+              Color(0xFF006754),
             ],
           ),
           borderRadius: BorderRadius.circular(23)

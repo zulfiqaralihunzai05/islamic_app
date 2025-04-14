@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/presentation/screen/onboadring/view/splash_screen.dart';
 
-import 'dashboard/homeScreen.dart';
+import 'dashboard/quranScreen.dart';
+import 'dashboard/surahDetails.dart';
 
 void main() {
   //jgcdshf
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Homescreen(),
+      home: SplashScreen(),
     );
   }
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../../../../../dashboard/surahDetails.dart';
 class surahWidget extends StatelessWidget {
   final int surahNo;
   final String surahMainTitle;
@@ -42,12 +45,12 @@ class surahWidget extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(surahMainTitle, style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600),),
+            Text(surahMainTitle, style: TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.w600, fontFamily: 'Noto Naskh Arabic'),),
             Row(
               children: [
-                Text(surahSubTitle, style: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w400),),
+                Text(surahSubTitle, style: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w400,fontFamily: 'Noto Naskh Arabic'),),
                 SizedBox(width: 18,),
-                Text(surahSubTitle2, style: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w400),),
+                Text(surahSubTitle2, style: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w400, fontFamily: 'Noto Naskh Arabic'),),
               ],
             ),
           ],

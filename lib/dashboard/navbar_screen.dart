@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islamic_app/dashboard/quranScreen.dart';
 import 'package:islamic_app/dashboard/setting_screen.dart';
-
+import 'quranScreen.dart';
 import 'dua_screen.dart';
 import 'favorite_screen.dart';
 import 'home-screen.dart';
@@ -16,6 +17,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   final List<Widget> _screens = [
     HomeScreen(),
     DuasScreen(),
+    QuranScreen(),
     FavoritesScreen(),
     SettingsScreen(),
   ];
@@ -50,6 +52,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book),
             label: 'Duas',
+          ),  BottomNavigationBarItem(
+            icon: Icon(Icons.menu_book),
+            label: 'Quran',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite_border),

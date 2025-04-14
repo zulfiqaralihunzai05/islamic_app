@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-
+import 'package:arabic_font/arabic_font.dart';
+import 'package:islamic_app/dashboard/surahDetails.dart';
 import '../presentation/screen/onboadring/view/widgets/SurahWidget.dart';
 
-class Homescreen extends StatefulWidget {
-  const Homescreen({super.key});
+class QuranScreen extends StatefulWidget {
+  const QuranScreen({super.key});
 
   @override
-  State<Homescreen> createState() => _HomescreenState();
+  State<QuranScreen> createState() => _HomescreenState();
 }
 
-class _HomescreenState extends State<Homescreen> {
+class _HomescreenState extends State<QuranScreen> {
   int selectedIndex = 0;
   final List<String> tabs = ['Surah', 'Para', 'Page', 'Hijb'];
 
@@ -179,13 +180,18 @@ class _HomescreenState extends State<Homescreen> {
               ],
             ),
             SizedBox(height: 34 ),
-            surahWidget(surahNo: 1, surahMainTitle: 'Al-Fatiah', surahSubTitle: 'Meccan', arbicTitle: 'ةحتافلا', surahSubTitle2: '7 verses',),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => SurahDetails(),));
+              },
+
+                child: surahWidget(surahNo: 1, surahMainTitle: 'Al-Fatiah', surahSubTitle: 'Meccan', arbicTitle: 'سورة الفاتحة', surahSubTitle2: '7 verses',)),
             SizedBox(height: 25,),
-            surahWidget(surahNo: 2, surahMainTitle: 'Al-Baqarah', surahSubTitle: 'Medinian', arbicTitle: 'ةرقبلا', surahSubTitle2: '286 verses',),
+            surahWidget(surahNo: 2, surahMainTitle: 'Al-Baqarah', surahSubTitle: 'Medinian', arbicTitle: 'سورة البقرة ', surahSubTitle2: '286 verses',),
             SizedBox(height: 25,),
-            surahWidget(surahNo: 3, surahMainTitle: 'Al-Imran', surahSubTitle: 'Meccan', arbicTitle: 'ناﺮﻤﻋ لآ', surahSubTitle2: '200 verses',),
+            surahWidget(surahNo: 3, surahMainTitle: 'Al-Imran', surahSubTitle: 'Meccan', arbicTitle: 'آلِ عِمْرَان', surahSubTitle2: '200 verses',),
             SizedBox(height: 25,),
-            surahWidget(surahNo: 4, surahMainTitle: 'An-Nisa', surahSubTitle: 'Meccan', arbicTitle: 'ءاسنلا', surahSubTitle2: '176 verses',),
+            surahWidget(surahNo: 4, surahMainTitle: 'An-Nisa', surahSubTitle: 'Meccan', arbicTitle: 'سورة النساء', surahSubTitle2: '176 verses',),
 
           ],
         ),
