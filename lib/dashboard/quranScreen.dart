@@ -13,11 +13,56 @@ class QuranScreen extends StatefulWidget {
 class _HomescreenState extends State<QuranScreen> {
   int selectedIndex = 0;
   final List<String> tabs = ['Surah', 'Para', 'Page', 'Hijb'];
+  final List<Map<String, dynamic>> surahList = [
+    {
+      'surahNo': 1,
+      'surahMainTitle': 'Al-Fatiah',
+      'surahSubTitle': 'Meccan',
+      'arbicTitle': 'سورة الفاتحة',
+      'surahSubTitle2': '7 verses'
+    },
+    {
+      'surahNo': 2,
+      'surahMainTitle': 'Al-Baqarah',
+      'surahSubTitle': 'Medinian',
+      'arbicTitle': 'سورة البقرة',
+      'surahSubTitle2': '286 verses'
+    },
+    {
+      'surahNo': 3,
+      'surahMainTitle': 'Al-Imran',
+      'surahSubTitle': 'Meccan',
+      'arbicTitle': 'آلِ عِمْرَان',
+      'surahSubTitle2': '200 verses'
+    },
+    {
+      'surahNo': 4,
+      'surahMainTitle': 'An-Nisa',
+      'surahSubTitle': 'Meccan',
+      'arbicTitle': 'سورة النساء',
+      'surahSubTitle2': '176 verses'
+    }, {
+      'surahNo': 5,
+      'surahMainTitle': "Surah Al-Ma'idah",
+      'surahSubTitle': 'Medinian',
+      'arbicTitle': 'سورة النساء',
+      'surahSubTitle2': '120 verses'
+    }, {
+      'surahNo': 6,
+      'surahMainTitle': "Surah Al-An'am",
+      'surahSubTitle': 'Meccan',
+      'arbicTitle': 'سورة النساء',
+      'surahSubTitle2': '165 verses'
+    },
+  ];
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: Icon(
           Icons.menu,
           color: Colors.black54,
@@ -25,7 +70,7 @@ class _HomescreenState extends State<QuranScreen> {
         title: Text(
           "Quran App",
           style: TextStyle(
-              color: Colors.green, fontSize: 20, fontWeight: FontWeight.w700),
+              color: Colors.green.shade700, fontSize: 20, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
         actions: [
@@ -39,7 +84,7 @@ class _HomescreenState extends State<QuranScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 10.0, right: 10),
+        padding: const EdgeInsets.only(left: 6.0, right: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,15 +95,15 @@ class _HomescreenState extends State<QuranScreen> {
                   "Asslamualaikum",
                   style: TextStyle(
                       color: Colors.black54,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w800),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
                 Text(
                   "Tanvir Ahassan",
                   style: TextStyle(
                       color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600),
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500),
                 ),
               ],
             ),
@@ -66,7 +111,7 @@ class _HomescreenState extends State<QuranScreen> {
             Stack(
               children: [
                 Container(
-                  width: 400,
+                  width: double.infinity,
                   height: 142,
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -135,7 +180,7 @@ class _HomescreenState extends State<QuranScreen> {
               ],
             ),
 
-            SizedBox(height: 25),
+            SizedBox(height: 20),
 
             // Taskbar
             Column(
@@ -170,7 +215,7 @@ class _HomescreenState extends State<QuranScreen> {
                             height: 3,
                             width: 50,
                             color:
-                                isSelected ? Colors.purple : Colors.transparent,
+                                isSelected ? Colors.grey : Colors.transparent,
                           ),
                         ],
                       ),
@@ -179,19 +224,36 @@ class _HomescreenState extends State<QuranScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 34 ),
-            InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => SurahDetails(),));
-              },
-
-                child: surahWidget(surahNo: 1, surahMainTitle: 'Al-Fatiah', surahSubTitle: 'Meccan', arbicTitle: 'سورة الفاتحة', surahSubTitle2: '7 verses',)),
-            SizedBox(height: 25,),
-            surahWidget(surahNo: 2, surahMainTitle: 'Al-Baqarah', surahSubTitle: 'Medinian', arbicTitle: 'سورة البقرة ', surahSubTitle2: '286 verses',),
-            SizedBox(height: 25,),
-            surahWidget(surahNo: 3, surahMainTitle: 'Al-Imran', surahSubTitle: 'Meccan', arbicTitle: 'آلِ عِمْرَان', surahSubTitle2: '200 verses',),
-            SizedBox(height: 25,),
-            surahWidget(surahNo: 4, surahMainTitle: 'An-Nisa', surahSubTitle: 'Meccan', arbicTitle: 'سورة النساء', surahSubTitle2: '176 verses',),
+            SizedBox(height: 22 ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: surahList.map((surah) {
+                    return Column(
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SurahDetails()),
+                            );
+                          },
+                          child: surahWidget(
+                            surahNo: surah['surahNo'],
+                            surahMainTitle: surah['surahMainTitle'],
+                            surahSubTitle: surah['surahSubTitle'],
+                            arbicTitle: surah['arbicTitle'],
+                            surahSubTitle2: surah['surahSubTitle2'],
+                          ),
+                        ),
+                        SizedBox(height: 22),
+                      ],
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
 
           ],
         ),
