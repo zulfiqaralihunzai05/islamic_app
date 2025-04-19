@@ -194,7 +194,7 @@ class HomeScreen extends StatelessWidget {
                 SingleChildScrollView(
                   child: Container(
                     child: ListView(
-                      shrinkWrap: true, // Use shrinkWrap to adapt to content size
+                      shrinkWrap: true,
                       physics: AlwaysScrollableScrollPhysics(),
                       padding: const EdgeInsets.only(left: 14.0, right: 14, top: 8),
                       children: [

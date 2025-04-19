@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../presentation/screen/onboadring/view/widgets/DetailedSurahTextWidget.dart';
+import '../presentation/screen/onboadring/view/widgets/appBar_widget.dart';
 
 class SurahDetails extends StatelessWidget {
  SurahDetails({super.key});
@@ -22,28 +23,7 @@ class SurahDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.arrow_back,
-          color: Colors.black54,
-        ),
-        title: Text(
-          "Al-Fatiah",
-          style: TextStyle(
-              color: Colors.green.shade700, fontSize: 20, fontWeight: FontWeight.w700),
-        ),
-        centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.black54,
-            ),
-          )
-        ],
-      ),
+      appBar: appBarWidget(appBarTitle: 'Al-Fatiha',),
       body: Column(
         children: [
           Stack(

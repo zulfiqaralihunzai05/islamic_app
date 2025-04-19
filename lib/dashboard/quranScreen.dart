@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:arabic_font/arabic_font.dart';
 import 'package:islamic_app/dashboard/surahDetails.dart';
 import '../presentation/screen/onboadring/view/widgets/SurahWidget.dart';
+import '../presentation/screen/onboadring/view/widgets/appBar_widget.dart';
 
 class QuranScreen extends StatefulWidget {
   const QuranScreen({super.key});
@@ -61,28 +62,7 @@ class _HomescreenState extends State<QuranScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Icon(
-          Icons.menu,
-          color: Colors.black54,
-        ),
-        title: Text(
-          "Quran App",
-          style: TextStyle(
-              color: Colors.green.shade700, fontSize: 20, fontWeight: FontWeight.w700),
-        ),
-        centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10.0),
-            child: Icon(
-              Icons.search,
-              color: Colors.black54,
-            ),
-          )
-        ],
-      ),
+      appBar: appBarWidget(appBarTitle: 'Quran App',),
       body: Padding(
         padding: const EdgeInsets.only(left: 6.0, right: 10),
         child: Column(
@@ -261,5 +241,7 @@ class _HomescreenState extends State<QuranScreen> {
     );
   }
 }
+
+
 
 
